@@ -1,0 +1,214 @@
+.main {
+    max-width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    background: linear-gradient(var(--color-bg-3), var(--color-bg-1));
+    overflow: hidden;
+}
+
+.main__container {
+    display: grid;
+    grid-template-columns: 43% 53%;
+    gap: 4%;
+    margin-top: 10rem;
+    position: relative;
+}
+
+.main__image-bg {
+    background: var(--color-bg-4);
+    height: 22rem;
+    width: 16rem;
+    position: absolute;
+}
+
+.main__image-lg {
+    width: 29rem;
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    filter: saturate(0) brightness(0.3);
+    transition: var(--transition);
+}
+
+.main__image-sm {
+    width: 28rem;
+    height: 28rem;
+    overflow: hidden;
+    position: absolute;
+    left: 6rem;
+    top: 6rem;
+    transition: var(--transition);
+}
+
+.main__left:hover .main__image-sm {
+    opacity: 0;
+}
+
+.main__left:hover .main__image-lg {
+    filter: saturate(1) brightness(1);
+    border: 1rem solid var(--color-bg-4);
+    top: 0;
+    left: 0;
+}
+
+.main__head {
+    display: flex;
+    gap: 2rem;
+}
+
+.empty {
+    height: 3.5rem;
+    width: 18rem;
+    background-color: var(--color-bg-2);
+    border-radius: calc(3.5rem / 2);
+    margin-bottom: 3.5rem;
+    box-shadow: inset 0 1rem 1rem rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-bg-4);
+}
+
+.main__tag {
+    color: var(--color-primary-variant);
+}
+
+.main__right p{
+    margin-top: 2rem;
+    width: 85%;
+}
+
+.main__btn-md {
+    display: none;
+}
+
+.main__frames {
+    position: absolute;
+    top: 88vh;
+    right: 47rem;
+    transition: var(--transition);
+}
+
+.main__frame {
+    width: 14rem;
+    border: 0.4rem solid var(--color-bg-3);
+    box-shadow: 0 0 4rem rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transform: rotate(-10deg);
+    transform-origin: bottom left;
+    transition: var(--transition);
+}
+
+.main__frame:nth-child(2) {
+    transform: rotate(20deg);
+    top: -2rem;
+    left: -2rem;
+}
+
+.main__frames:hover .main__frame {
+    transform: rotate(0);
+}
+
+.main__frames:hover .main__frame:nth-child(2) {
+    top: 0;
+    left: 15rem;
+}
+
+.main__btn {
+    background: linear-gradient(-30deg, var(--color-primary-variant), var(--color-primary), var(--color-primary-variant));
+    position: absolute;
+    right: 6%;
+    bottom: -5rem;
+}
+
+.main__btn:hover {
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
+    transform: translateY(-1rem);
+    color: var(--color-bg-1);
+}
+
+@media screen and (max-width: 1280px) {
+    .main {
+        height: fit-content;
+        padding: 10rem 0 12rem;
+        display: grid;
+        place-items: center;
+    }
+
+    .main__image-bg, .main__image-sm {
+        display: none;
+    }
+
+    .main__container {
+        grid-template-columns: 40% 54%;
+        gap: 6%;
+        margin: 0;
+    }
+
+    .main__image-lg {
+        filter: saturate(1) brightness(1);
+        border: 1rem solid var(--color-bg-4);
+        width: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        border-radius: 15rem 15rem 0 0;
+    }
+
+    .empty {
+        display: none;
+    }
+
+    .main__tag {
+        margin-bottom: 1rem;
+    }
+
+    .main__right p {
+        margin-top: 1.5rem;
+        width: 100%;
+    }
+
+    .main__frames, .contact__btn {
+        display: none;
+    }
+
+    .main__btn-md {
+        background: linear-gradient(135deg, var(--color-primary-variant), var(--color-primary));
+        color: var(--color-bg-1);
+        margin-top: 2rem;
+        display: inline-block;
+        padding: 0.6rem 1.6rem;
+        font-weight: 600;
+        border-radius: 0.3rem;
+    }
+
+    .main__btn-md:hover {
+        color: var(--color-bg-1);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main {
+        padding: 0;
+        padding-bottom: 6rem;
+    }
+
+    .main__container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .main__image-lg {
+        width: 80%;
+        height: 20rem;
+        margin: 0 auto;
+        margin-top: 7rem;
+    }
+
+    .main__head {
+        justify-content: center;
+    }
+
+    .main__right p {
+        margin-top: 1rem;
+    }
+}
